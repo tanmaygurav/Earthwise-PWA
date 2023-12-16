@@ -22,7 +22,7 @@
     <title>EarthWise</title>
 </head>
 
-<body>
+<body onload="getevents()">
     <!-- top nav -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-nav ">
         <div class="container-fluid">
@@ -43,30 +43,21 @@
         <li>
             <div class="divider"></div>
         </li>
-        <li><a href="/public/pages/contact.html" class="waves-effect">
+        <li><a href="/public/pages/about.html" class="waves-effect">
                 <i class="material-icons">mail_outline</i>Contact</a>
         </li>
     </ul>
 
-
-    <div class="">
+    <div class="overflow-scroll overflow-scroll-test" id="test" >
         <div class="m-3 card">
-            <img src="/public/img/home_1.svg" class="card-img" alt="...">
-        </div>
-        <div class="m-3 card">
-            <img src="/public/img/home_2.svg" class="card-img" alt="...">
-        </div>
-        <div class="m-3 card">
-            <img src="/public/img/home_3.svg" class="card-img" alt="...">
-        </div>
-        <div class="m-3 card">
-            <img src="/public/img/home_4.svg" class="card-img" alt="...">
-        </div>
-        <div class="m-3 card">
-            <img src="/public/img/home_5.svg" class="card-img" alt="...">
-        </div>
-        <div class="m-3 card">
-            <img src="/public/img/home_6.svg" class="card-img" alt="...">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Event Name</h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary">Organisation name</h6>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <p class="card-link">${i.venue} &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp ${i.timing}</p>
+                <a href="#" class="btn btn-primary">Register</a>
+            </div>
         </div>
     </div>
 
