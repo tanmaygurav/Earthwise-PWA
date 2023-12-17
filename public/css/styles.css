@@ -46,3 +46,8 @@
 .top-section-search-bar{
     margin-top: 3.2rem;
 }
+
+.background{
+    background-image: url('../img/background_1.svg');
+    height: 100vh;
+}
