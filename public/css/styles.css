@@ -51,3 +51,11 @@
     background-image: url('../img/background_1.svg');
     height: 100vh;
 }
+
+.page-title{
+    font-size: large;
+}
+
+form{
+    background-color:  #e0f2f1;
+}
