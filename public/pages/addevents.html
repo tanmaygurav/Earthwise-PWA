@@ -22,10 +22,7 @@
     <title>EarthWise</title>
 </head>
 
-<body onload="getevents()">
-    <!-- facebook share -->
-    <div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v18.0" nonce="lr6qChc3"></script>
+<body>
     <!-- top nav -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-nav ">
         <div class="container-fluid">
@@ -44,19 +41,43 @@
         <li><a href="../index.html" class="waves-effect">Home</a></li>
         <li><a href="../pages/qrscan.html" class="waves-effect">Scan QR</a></li>
         <li><a href="../pages/addevents.html" class="waves-effect">Add Events</a></li>
-        
-        <!-- <li>
-            <div class="divider"></div>
-        </li>
-        <li><a href="../pages/about.html" class="waves-effect">
-                <i class="material-icons">mail_outline</i>Contact</a>
-        </li> -->
+        <li><a href="../pages/addgadgets.html" class="waves-effect">Add Gadgets</a></li>
+
     </ul>
-
     <div class="background">
-
-        <div id="test"></div>
+        <form class="m-3">
+            <div class="mb-4">
+                <label for="orgname" class="form-label fs-3">Organisation name</label>
+                <input type="text" class="form-control" id="orgname">
+            </div>
+            <div class="mb-4">
+                <label for="eventname" class="form-label fs-3">Event name</label>
+                <input type="text" class="form-control" id="eventname">
+            </div>
+            <div class="mb-4">
+                <label for="venue" class="form-label fs-3">Venue</label>
+                <input type="text" class="form-control" id="venue">
+            </div>
+            <div class="mb-4">
+                <label for="timing" class="form-label fs-3">Timing</label>
+                <input type="text" class="form-control" id="timing">
+            </div>
+            <div class="mb-4">
+                <label for="cordname" class="form-label fs-3">Coordinator Name</label>
+                <input type="text" class="form-control" id="cordname">
+            </div>
+            <div class="mb-4">
+                <label for="cordno" class="form-label fs-3">Coordinator Number</label>
+                <input type="text" class="form-control" id="cordno">
+            </div>
+            <div class="mb-4">
+                <label for="date" class="form-label fs-3">Date</label>
+                <input type="text" class="form-control" id="date">
+            </div>
+        </form>
     </div>
+
+
     <div class="bottom-bar d-flex justify-content-evenly">
         <a href="../pages/events.html" class="d-flex flex-column justify-content-center">
             <img src="../img/bottom_1.svg" class="icon-40">
@@ -81,9 +102,11 @@
     <!--JavaScript at end of body for optimized loading-->
     <script type="text/javascript" src="../js/bootstrap.bundle.js"></script>
     <script type="text/javascript" src="../js/materialize.min.js"></script>
+    <script type="text/javascript" src="../js/html5-qrcode.min.js"></script>
     <script src="../js/app.js"></script>
     <script src="../js/db.js"></script>
     <script src="../js/ui.js"></script>
+    <script src="../js/qr.js"></script>
 </body>
 
 </html>
