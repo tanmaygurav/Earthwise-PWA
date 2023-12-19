@@ -11,7 +11,7 @@
     background: rgba(255, 255, 255, 0.95);
 
     position: -webkit-sticky;
-    position: sticky;
+    position: fixed;
     bottom: 0;
     /* height: 30px; */
     width: 100vw;
@@ -50,6 +50,7 @@
 .background{
     background-image: url('../img/background_1.svg');
     height: 100vh;
+    background-repeat: repeat-y;
 }
 
 .page-title{
