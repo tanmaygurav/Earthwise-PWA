@@ -45,35 +45,37 @@
 
     </ul>
     <div class="background">
-        <form class="m-3">
+        <form class="m-3" method="get" >
             <div class="mb-4">
                 <label for="orgname" class="form-label fs-3">Organisation name</label>
-                <input type="text" class="form-control" id="orgname">
+                <input type="text" class="form-control" id="orgname" required>
             </div>
             <div class="mb-4">
                 <label for="eventname" class="form-label fs-3">Event name</label>
-                <input type="text" class="form-control" id="eventname">
+                <input type="text" class="form-control" id="eventname" required>
             </div>
             <div class="mb-4">
                 <label for="venue" class="form-label fs-3">Venue</label>
-                <input type="text" class="form-control" id="venue">
+                <input type="text" class="form-control" id="venue" required>
             </div>
             <div class="mb-4">
                 <label for="timing" class="form-label fs-3">Timing</label>
-                <input type="text" class="form-control" id="timing">
+                <input type="text" class="form-control" id="timing" required>
             </div>
             <div class="mb-4">
                 <label for="cordname" class="form-label fs-3">Coordinator Name</label>
-                <input type="text" class="form-control" id="cordname">
+                <input type="text" class="form-control" id="cordname" required>
             </div>
             <div class="mb-4">
                 <label for="cordno" class="form-label fs-3">Coordinator Number</label>
-                <input type="text" class="form-control" id="cordno">
+                <input type="text" class="form-control" id="cordno" required>
             </div>
             <div class="mb-4">
                 <label for="date" class="form-label fs-3">Date</label>
-                <input type="text" class="form-control" id="date">
+                <input type="text" class="form-control" id="date" required>
             </div>
+            <button type="button" onclick="addevents()" class="btn btn-primary">Submit</button>
+
         </form>
     </div>
 

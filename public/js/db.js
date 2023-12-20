@@ -26,8 +26,9 @@ async function getevents() {
                     <h6 class="card-subtitle mb-2 text-body-secondary">${i.org_name} &nbsp &nbsp ${i.OID} &nbsp &nbsp &nbsp &nbsp &nbsp ${i.evt_cat}</h6>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                     <p class="card-link">${i.venue} &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp ${i.timing}</p>
-                    <a href="#" class="btn btn-primary">Register</a>
-                    <div class="fb-share-button" data-href="http://127.0.0.1:5501/public/pages/events.html" data-layout="" data-size=""><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F127.0.0.1%3A5501%2Fpublic%2Fpages%2Fevents.html&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+                    
+                    <!-- <a href="#" class="btn btn-primary">Register</a> -->
+                    <div class="fb-share-button" data-href="https://earthwise-d8eb1.web.app/pages/events.html" data-layout="" data-size=""><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fearthwise-d8eb1.web.app%2Fpages%2Fevents.html&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
                     </div>
                     
                 </div>
@@ -39,15 +40,15 @@ async function getevents() {
 }
 
 async function addevents() {
-    const list = document.getElementById("test");
+    // Get elements by id from frontend
     const oid = "1001";
-    const org_name = document.getElementById("orgname");
-    const event_name = document.getElementById("eventname");
-    const venue = document.getElementById("venue");
-    const timing = document.getElementById("timing");
-    const coordinator_name = document.getElementById("cordname");
-    const coordinator_no = document.getElementById("corno");
-    const date = document.getElementById("date");
+    const org_name = document.getElementById("orgname").value;
+    const event_name = document.getElementById("eventname").value;
+    const venue = document.getElementById("venue").value;
+    const timing = document.getElementById("timing").value;
+    const coordinator_name = document.getElementById("cordname").value;
+    const coordinator_no = document.getElementById("cordno").value;
+    const date = document.getElementById("date").value;
     data = {
         url: url,
         params: {
@@ -59,29 +60,29 @@ async function addevents() {
             timing: timing,
             coordinator_name: coordinator_name,
             coordinator_no: coordinator_no,
+            date: date,
         },
     };
     console.log(data);
+    // if (
+    //     oid.length >= 0 &&
+    //     org_name >= 0 &&
+    //     event_name >= 0 &&
+    //     venue >= 0 &&
+    //     date >= 0 &&
+    //     timing >= 0 &&
+    //     coordinator_name >= 0 &&
+    //     coordinator_no >= 0
+    // ) {
     const query = encodeQuery(data);
     const response = await fetch(query);
     const res = await response.json();
     if (response.status != 200) alert("No data", res.status);
     if (response.status === 200) {
-        list.innerHTML = "";
-        res.forEach((i) => {
-            list.innerHTML += `
-            <div class="m-3 card">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">${i.event_name} &nbsp ${i.EID} </h5>
-                    <h6 class="card-subtitle mb-2 text-body-secondary">${i.org_name} &nbsp &nbsp ${i.OID} &nbsp &nbsp &nbsp &nbsp &nbsp ${i.evt_cat}</h6>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <p class="card-link">${i.venue} &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp ${i.timing}</p>
-                    <a href="#" class="btn btn-primary">Register</a>
-                </div>
-            </div>
-            `;
-        });
+        console.log("res", res)
+        alert(res.status || res.error);
+
+        // }
     }
 }
 /* Abstraction */
