@@ -21,8 +21,14 @@
     <meta name="theme-color" content="#003F52">
     <title>EarthWise</title>
 </head>
+<!--  -->
 
-<body>
+<body onload="getgadgets()">
+    <!-- facebook share -->
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous"
+        src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v18.0&appId=575850994726893"
+        nonce="WZhQT2Ks"></script>
     <!-- top nav -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-nav ">
         <div class="container-fluid">
@@ -39,11 +45,10 @@
     <ul id="side-menu" class="sidenav side-menu">
         <li><a class="subheader"><img src="../img/logo.png" alt="" width="30" height="24"></a></li>
         <li><a href="../index.html" class="waves-effect">Home</a></li>
-        <li><a href="../pages/addevents.html" class="waves-effect">Add Events</a></li>
         <li><a href="../pages/qrscan.html" class="waves-effect">Scan QR</a></li>
-        <li><a href="../pages/addgadgets.html" class="waves-effect">Recycle Gadget</a></li>
+        <li><a href="../pages/addevents.html" class="waves-effect">Add Events</a></li>
         <li><a href="../pages/gadgets.html" class="waves-effect">Gadgets</a></li>
-        
+
         <!-- <li>
             <div class="divider"></div>
         </li>
@@ -51,58 +56,33 @@
                 <i class="material-icons">mail_outline</i>Contact</a>
         </li> -->
     </ul>
+
     <div class="background">
-        <p class="text-center fs-1">User Info</p>
-        <form class="m-3">
-            <div class="mb-3">
-                <label for="userid" class="form-label fs-3 text-medium">User ID</label>
-                <input type="email" class="form-control" id="userid" aria-describedby="emailHelp" value="10001"
-                    disabled>
+
+        <div id="gadgetslist">
+
+            <div class="m-3 card">
+                <!-- <img src="..." class="card-img-top" alt="..."> -->
+                <div class="card-body">
+                    <h5 class="card-title">ID: ${i.JID}</h5>
+                    <h6 class="card-subtitle mb-2 text-body-secondary">Device Type: ${i.device_type} </h6>
+                    <p class="card-text">Device Model: ${device_model}</p>
+                    <p class="card-text">Serial NUmber: ${serial_number}</p>
+                    <p class="card-text">Physical Condition: ${physicalcon}</p>
+                    <p class="card-text">Operational Condition: ${opcon}</p>
+                    <p class="card-text">Repairs: ${repairs}</p>
+                    <p class="card-text">Weight: ${weight}</p>
+                    <p class="card-text">GloRe Point: ${point}</p>
+
+                    <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/"
+                        data-layout="" data-size=""><a target="_blank"
+                            href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse"
+                            class="fb-xfbml-parse-ignore">Share</a></div>
+
+                </div>
             </div>
-            <div class="mb-3">
-                <label for="username" class="form-label fs-3">User Name</label>
-                <input type="text" class="form-control" id="username" value="Vinit" disabled>
-            </div>
-        </form>
-        <p class="text-center fs-1">Add Gadget details</p>
-        <form class="m-3 add_gadget_form">
-            <div class="mb-3">
-                <label for="device_type" class="form-label fs-3">Type of device</label>
-                <input type="text" class="form-control" id="device_type">
-            </div>
-            <div class="mb-3">
-                <label for="device_brand" class="form-label fs-3">Device Brand</label>
-                <input type="text" class="form-control" id="device_brand">
-            </div>
-            <div class="mb-3">
-                <label for="device_model" class="form-label fs-3">Device Model</label>
-                <input type="text" class="form-control" id="device_model">
-            </div>
-            <div class="mb-3">
-                <label for="serial_number" class="form-label fs-3">Serial Number</label>
-                <input type="text" class="form-control" id="serial_number">
-            </div>
-            <div class="mb-3">
-                <label for="physicalcon" class="form-label fs-3">Physical Condition</label>
-                <input type="text" class="form-control" id="physicalcon">
-            </div>
-            <div class="mb-3">
-                <label for="opcon" class="form-label fs-3">Operational Condition</label>
-                <input type="text" class="form-control" id="opcon">
-            </div>
-            <div class="mb-3">
-                <label for="repairs" class="form-label fs-3">Previous Modification</label>
-                <input type="text" class="form-control" id="repairs">
-            </div>
-            <div class="mb-3">
-                <label for="weight" class="form-label fs-3">Previous Modification</label>
-                <input type="text" class="form-control" id="weight">
-            </div>
-            <button type="button" onclick="addgadgets()" class="btn btn-primary bottom_margin">Submit</button>
-        </form>
+        </div>
     </div>
-
-
     <div class="bottom-bar d-flex justify-content-evenly">
         <a href="../pages/events.html" class="d-flex flex-column justify-content-center">
             <img src="../img/bottom_1.svg" class="icon-40">
@@ -127,11 +107,9 @@
     <!--JavaScript at end of body for optimized loading-->
     <script type="text/javascript" src="../js/bootstrap.bundle.js"></script>
     <script type="text/javascript" src="../js/materialize.min.js"></script>
-    <script type="text/javascript" src="../js/html5-qrcode.min.js"></script>
     <script src="../js/app.js"></script>
     <script src="../js/db.js"></script>
     <script src="../js/ui.js"></script>
-    <script src="../js/qr.js"></script>
 </body>
 
 </html>
