@@ -1,6 +1,8 @@
 firebase install
 npm install -g firebase-tools
 
+ Create project on firebase on browser (after account creation)
+
 firebase login
 
 firebase init
